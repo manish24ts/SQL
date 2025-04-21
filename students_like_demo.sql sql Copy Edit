@@ -1,0 +1,46 @@
+-- Drop the table if it already exists
+DROP TABLE IF EXISTS students;
+
+-- Create the students table
+CREATE TABLE students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    department VARCHAR(50),
+    roll_number VARCHAR(20)
+);
+
+-- Insert sample data
+INSERT INTO students (name, email, department, roll_number) VALUES
+('Amit Sharma', 'amit.sharma@gmail.com', 'CSE', 'CSE101'),
+('Neha Singh', 'neha_singh@yahoo.com', 'ECE', 'ECE102'),
+('Ramesh Kumar', 'ramesh.k@gmail.com', 'CST', 'CST103'),
+('Anita Verma', 'anita.v@hotmail.com', 'IT', 'IT104'),
+('Tanmay Joshi', 'tanmay.j@gmail.com', 'CSE', 'CSE105'),
+('Suresh Nair', 'suresh.nair@gmail.com', 'EEE', 'EEE106'),
+('Karan Patel', 'karan.patel@outlook.com', 'MECH', 'ME107'),
+('Arjun Rao', 'arjun_rao@gmail.com', 'CSE', 'CSE108');
+
+-- 1. Students whose name starts with 'A'
+-- SELECT * FROM students WHERE name LIKE 'A%';
+
+-- 2. Students whose name ends with 'n'
+-- SELECT * FROM students WHERE name LIKE '%n';
+
+-- 3. Students whose name contains 'esh'
+-- SELECT * FROM students WHERE name LIKE '%esh%';
+
+-- 4. Students with Gmail emails
+-- SELECT * FROM students WHERE email LIKE '%@gmail.com';
+
+-- 5. Students in departments starting with 'C'
+-- SELECT * FROM students WHERE department LIKE 'C%';
+
+-- 6. Students with roll numbers of 3 letters followed by numbers (e.g., CSE105)
+-- SELECT * FROM students WHERE roll_number LIKE '___%';
+
+-- 7. Students whose name has 'a' as the second letter
+-- SELECT * FROM students WHERE name LIKE '_a%';
+
+-- 8. Case-insensitive name search for 'an' (MySQL is usually case-insensitive by default)
+-- SELECT * FROM students WHERE name LIKE '%an%';
